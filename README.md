@@ -1,7 +1,7 @@
-# irjs-osm
+IRJS-OSM
+========
 
 IRJS OSM Tool
-
 
 
 ##CLI

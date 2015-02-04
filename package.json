@@ -1,6 +1,6 @@
 {
   "name": "irjs-osm",
-  "version": "0.0.1",
+  "version": "0.0.0.1",
   "description": "Information Retrieval with JavaScript sample project for handling OSM stuff.",
   "main": "index.js",
   "scripts": {
