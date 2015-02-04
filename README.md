@@ -4,17 +4,16 @@ IRJS-OSM
 IRJS OSM Tool
 
 
-##CLI
-
-###Installation
+## CLI
+### Installation
 
 	$ npm install -g irjs-osm
 
-###Example
+### Example
 
 	$irosm blah blah
 
-##API
+## API
 
 ```javascript
 
@@ -24,6 +23,6 @@ var irosm = require('irjs-osm')
 ```
 
 
-##Test
+## Test
 
 	$ mocha
