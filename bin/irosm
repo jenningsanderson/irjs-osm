@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+var craft = require('../lib'),
+    program = require('commander')
+
+program
+    .command('download')
+    .description('Download the Latest Changesets')
+    .action(function(src, options) {
+        console.log('Downloading most recent '+src.parent.limit.toString()+ ' records')
+    })
+
+program
+    .command('save')
+    .description('Save as GeoJSON')
+    .action(function(src, options) {
+        console.log('Saving as a GeoJSON')
+
+    })
+
+program
+  .option('-l, --limit <n>', 'A limit for the number of changesets', parseInt)
+
+program.parse(process.argv)
