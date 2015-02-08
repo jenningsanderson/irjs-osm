@@ -29,14 +29,6 @@ program
     })
 
 program
-    .command('users')
-    .description('List all users who contributed')
-    .action(function(src, options) {
-        console.log('These users contributed:')
-        osmFeed.users()
-    })
-
-program
     .command('download')
     .description('Download the Latest Changesets')
     .action(function(src, options) {
@@ -53,6 +45,7 @@ program
     })
 
 program
+  // This needs to be implemented here, I haven't figured out how to access options but the lib can accept this arg
   .option('-l, --limit <n>', 'A limit for the number of changesets', parseInt)
 
 program.parse(process.argv)
