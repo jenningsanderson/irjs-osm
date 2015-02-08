@@ -1,20 +1,22 @@
 #!/usr/bin/env node
 
-var craft = require('../lib'),
+var osmFeed = require('../lib/osm'),
     program = require('commander')
 
 program
-    .command('download')
-    .description('Download the Latest Changesets')
+    .command('titles')
+    .description('Titles of Latest Changesets')
     .action(function(src, options) {
-        console.log('Downloading most recent '+src.parent.limit.toString()+ ' records')
+        console.log('Titles of Latest Changesets:')
+        osmFeed.titles()
     })
 
 program
-    .command('save')
-    .description('Save as GeoJSON')
+    .command('summaries')
+    .description('Summaries of Latest Changesets')
     .action(function(src, options) {
-        console.log('Saving as a GeoJSON')
+        console.log('Summaries of Latest Changesets:')
+        osmFeed.summaries()
 
     })
 
@@ -22,8 +24,32 @@ program
     .command('users')
     .description('List all users who contributed')
     .action(function(src, options) {
-        console.log('These users participated:')
+        console.log('These users contributed:')
+        osmFeed.users()
+    })
 
+program
+    .command('users')
+    .description('List all users who contributed')
+    .action(function(src, options) {
+        console.log('These users contributed:')
+        osmFeed.users()
+    })
+
+program
+    .command('download')
+    .description('Download the Latest Changesets')
+    .action(function(src, options) {
+        console.log("TODO")
+        console.log('Downloading most recent '+src.parent.limit.toString()+ ' records')
+    })
+
+program
+    .command('save')
+    .description('Save as GeoJSON')
+    .action(function(src, options) {
+        console.log("TODO")
+        console.log('Saving as a GeoJSON')
     })
 
 program
