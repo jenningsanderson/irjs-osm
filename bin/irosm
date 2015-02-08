@@ -32,7 +32,7 @@ program
     .command('download')
     .description('Download the Latest Changesets')
     .action(function(src, options) {
-        console.log("TODO")
+        console.log("TODO - But Not sure if it's necessary?  Currently implemented as part of all actions")
         console.log('Downloading most recent '+src.parent.limit.toString()+ ' records')
     })
 
