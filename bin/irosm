@@ -1,12 +1,38 @@
 #!/usr/bin/env node
 
-var craft = require('../lib'),
+var osmFeed = require('../lib/osm'),
     program = require('commander')
+
+program
+    .command('titles')
+    .description('Titles of Latest Changesets')
+    .action(function(src, options) {
+        console.log('Titles of Latest Changesets:')
+        osmFeed.get('titles')
+    })
+
+program
+    .command('summaries')
+    .description('Summaries of Latest Changesets')
+    .action(function(src, options) {
+        console.log('Summaries of Latest Changesets:')
+        osmFeed.get('summaries')
+
+    })
+
+program
+    .command('users')
+    .description('List all users who contributed')
+    .action(function(src, options) {
+        console.log('These users contributed:')
+        osmFeed.get('users')
+    })
 
 program
     .command('download')
     .description('Download the Latest Changesets')
     .action(function(src, options) {
+        console.log("TODO - But Not sure if it's necessary?  Currently implemented as part of all actions")
         console.log('Downloading most recent '+src.parent.limit.toString()+ ' records')
     })
 
@@ -14,10 +40,12 @@ program
     .command('save')
     .description('Save as GeoJSON')
     .action(function(src, options) {
+        console.log("TODO")
         console.log('Saving as a GeoJSON')
     })
 
 program
+  // This needs to be implemented here, I haven't figured out how to access options but the lib can accept this arg
   .option('-l, --limit <n>', 'A limit for the number of changesets', parseInt)
 
 program.parse(process.argv)

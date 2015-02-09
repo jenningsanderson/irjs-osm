@@ -1,3 +1,4 @@
-var rss = require('./lib/osm')   
+var osmFeed = require('./lib/osm')
+var num_results = 10
 
-rss.rss
+osmFeed.get('users',num_results)
