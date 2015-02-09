@@ -29,6 +29,14 @@ program
     })
 
 program
+    .command('changesets')
+    .description('List all changesets')
+    .action(function(src, options) {
+        console.log('These changesets were submitted:')
+        osmFeed.get('changesets')
+    })
+
+program
     .command('download')
     .description('Download the Latest Changesets')
     .action(function(src, options) {
