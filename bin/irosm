@@ -15,7 +15,6 @@ program
     .description('Save as GeoJSON')
     .action(function(src, options) {
         console.log('Saving as a GeoJSON')
-
     })
 
 program
