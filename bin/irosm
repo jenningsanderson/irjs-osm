@@ -8,7 +8,7 @@ program
     .description('Titles of Latest Changesets')
     .action(function(src, options) {
         console.log('Titles of Latest Changesets:')
-        osmFeed.get('titles')
+        osmFeed.get('titles', src.parent.limit)
     })
 
 program
@@ -16,7 +16,7 @@ program
     .description('Summaries of Latest Changesets')
     .action(function(src, options) {
         console.log('Summaries of Latest Changesets:')
-        osmFeed.get('summaries')
+        osmFeed.get('summaries', src.parent.limit)
 
     })
 
@@ -25,7 +25,7 @@ program
     .description('List all users who contributed')
     .action(function(src, options) {
         console.log('These users contributed:')
-        osmFeed.get('users')
+        osmFeed.get('users', src.parent.limit)
     })
 
 program
@@ -33,7 +33,7 @@ program
     .description('List all changesets')
     .action(function(src, options) {
         console.log('These changesets were submitted:')
-        osmFeed.get('changesets')
+        osmFeed.get('changesets', src.parent.limit)
     })
 
 program
