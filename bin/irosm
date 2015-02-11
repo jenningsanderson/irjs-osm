@@ -1,59 +1,39 @@
 #!/usr/bin/env node
 
-var osmFeed = require('../lib/osm'),
+var osmFeed = require('../lib'),
     program = require('commander')
 
 program
     .command('titles')
     .description('Titles of Latest Changesets')
     .action(function(src, options) {
-        console.log('Titles of Latest Changesets:')
-        osmFeed.get('titles', src.parent.limit)
+        osmFeed.get(src, osmFeed.titles)
     })
 
 program
     .command('summaries')
     .description('Summaries of Latest Changesets')
     .action(function(src, options) {
-        console.log('Summaries of Latest Changesets:')
-        osmFeed.get('summaries', src.parent.limit)
-
+        osmFeed.get(src, osmFeed.summaries)
     })
 
 program
     .command('users')
     .description('List all users who contributed')
     .action(function(src, options) {
-        console.log('These users contributed:')
-        osmFeed.get('users', src.parent.limit)
+        osmFeed.get(src, osmFeed.users)
     })
 
 program
     .command('changesets')
     .description('List all changesets')
     .action(function(src, options) {
-        console.log('These changesets were submitted:')
-        osmFeed.get('changesets', src.parent.limit)
+        osmFeed.get(src, osmFeed.changesets)
     })
 
 program
-    .command('download')
-    .description('Download the Latest Changesets')
-    .action(function(src, options) {
-        console.log("TODO - But Not sure if it's necessary?  Currently implemented as part of all actions")
-        console.log('Downloading most recent '+src.parent.limit.toString()+ ' records')
-    })
-
-program
-    .command('save')
-    .description('Save as GeoJSON')
-    .action(function(src, options) {
-        console.log("TODO")
-        console.log('Saving as a GeoJSON')
-    })
-
-program
-  // This needs to be implemented here, I haven't figured out how to access options but the lib can accept this arg
-  .option('-l, --limit <n>', 'A limit for the number of changesets', parseInt)
+  .option('-l, --limit <n>', 'A limit for the number of changesets', parseInt, undefined)
+  .option('-f, --format <string>', 'The desired format of the output', String, 'txt')
+  .option('-o, --outFile <path/to/file.ext>', 'The file to write the output', String)
 
 program.parse(process.argv)
