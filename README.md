@@ -6,6 +6,9 @@ IRJS-OSM
 This is a command line tool for working with the lateset OpenStreetMap data for a specific bounding box.  The tool relies on pulling the latest changeset information from the [WhoDidIt project](http://zverik.osm.rambler.ru/whodidit/)
 
 
+Bounding Box: A bounding box of the standard form: LL, UR as a string of 4 numbers, comma separated:
+	
+	-105.3424072,39.946595,-105.1872253,40.0938316
 
 ## CLI
 ### Installation
@@ -25,6 +28,8 @@ This is a command line tool for working with the lateset OpenStreetMap data for 
 		-l, --limit <n>                   A limit for the number of results
 		-f, --format <string>             The desired format of the output
 		-o, --outFile <path/to/file.ext>  A file to write the output, defaults to stdout
+		-b, --bbox <path/to/bbox.config>  The bounding box configuration file, defaults to ./bbox.config
+
 
 
 ### Example
@@ -45,12 +50,20 @@ This is a command line tool for working with the lateset OpenStreetMap data for 
 
 ```javascript
 
-var osmFeed = require('./lib')
+var osmFeed = require('irjs-osm')
 
 options = {}
 options.limit = 3
 options.format = 'json'
 options.outFile = 'return'
+
+//You may pass a bbox in as a string, or as a location by using either of the following (not both, the options.bbox will override).
+
+//Pass a file:
+options.bboxFile = './config.bbox'
+
+//OR Pass a String
+options.bbox = '-105.3424072,39.946595,-105.1872253,40.0938316'
 
 //Print out the changesets
 osmFeed.get(options, osmFeed.changesets, function(res){
