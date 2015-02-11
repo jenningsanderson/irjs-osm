@@ -3,7 +3,7 @@ IRJS-OSM
 
 IRJS OSM Tool
 
-![Travis CI](https://travis-ci.org/jenningsanderson/irjs-osm.svg)
+[![Build Status](https://travis-ci.org/jenningsanderson/irjs-osm.svg?branch=master)](https://travis-ci.org/jenningsanderson/irjs-osm)
 
 
 ## CLI
