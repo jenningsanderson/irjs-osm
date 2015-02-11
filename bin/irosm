@@ -32,8 +32,8 @@ program
     })
 
 program
-  .option('-l, --limit <n>', 'A limit for the number of changesets', parseInt, undefined)
+  .option('-l, --limit <n>', 'A limit for the number of desired results', parseInt, undefined)
   .option('-f, --format <string>', 'The desired format of the output', String, 'txt')
-  .option('-o, --outFile <path/to/file.ext>', 'The file to write the output', String)
+  .option('-o, --outFile <path/to/file.ext>', 'A file to write the output, defaults to stdout', String)
 
 program.parse(process.argv)
