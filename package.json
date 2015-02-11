@@ -4,7 +4,7 @@
   "description": "Information Retrieval with JavaScript sample project for handling OSM stuff.",
   "main": "./libindex.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
