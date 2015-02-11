@@ -23,9 +23,3 @@ describe('Changesets', function() {
 
     })
 })
-
-// Not entirely sure how to test this because it just writes 
-// the results to stdout or a file...
-//
-//
-//
