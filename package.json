@@ -1,6 +1,6 @@
 {
   "name": "irjs-osm",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "Information Retrieval with JavaScript sample project for handling OSM stuff.",
   "main": "./libindex.js",
   "scripts": {
@@ -13,10 +13,12 @@
   "keywords": [
     "osm"
   ],
-  "author": "Jennings Anderson, Robert Soden",
+  "preferGlobal":"true",
+  "bin":{"irosm":"bin/irosm"},
+  "author":"Jennings Anderson, Robert Soden",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jenningsanderson/irjs-osm/issues"
   },
-  "homepage": "jenningsanderson.github.io/irjs-osm"
+  "homepage": "http://jenningsanderson.github.io/irjs-osm"
 }
