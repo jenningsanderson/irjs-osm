@@ -1,9 +1,10 @@
+
 IRJS-OSM
 ========
-
-IRJS OSM Tool
-
 [![Build Status](https://travis-ci.org/jenningsanderson/irjs-osm.svg?branch=master)](https://travis-ci.org/jenningsanderson/irjs-osm)
+
+This is a command line tool for working with the lateset OpenStreetMap data for a specific bounding box.  The tool relies on pulling the latest changeset information from the [WhoDidIt project](http://zverik.osm.rambler.ru/whodidit/)
+
 
 
 ## CLI
