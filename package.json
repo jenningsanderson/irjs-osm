@@ -1,10 +1,10 @@
 {
   "name": "irjs-osm",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Information Retrieval with JavaScript sample project for handling OSM stuff.",
-  "main": "index.js",
+  "main": "./libindex.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
