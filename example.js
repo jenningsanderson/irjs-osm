@@ -1,4 +1,12 @@
-var osmFeed = require('./lib/osm')
-var num_results = 10
+var osmFeed = require('./lib')
 
-osmFeed.get('changesets',num_results)
+
+options = {}
+options.limit = 3
+options.format = 'json'
+options.outFile = 'return'
+
+//Print out the changesets
+osmFeed.get(options, osmFeed.changesets, function(res){
+	console.log(res)
+})

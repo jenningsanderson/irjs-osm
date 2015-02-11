@@ -7,33 +7,34 @@ program
     .command('titles')
     .description('Titles of Latest Changesets')
     .action(function(src, options) {
-        osmFeed.get(src, osmFeed.titles)
+        osmFeed.get(program, osmFeed.titles)
     })
 
 program
     .command('summaries')
     .description('Summaries of Latest Changesets')
     .action(function(src, options) {
-        osmFeed.get(src, osmFeed.summaries)
+        osmFeed.get(program, osmFeed.summaries)
     })
 
 program
     .command('users')
     .description('List all users who contributed')
     .action(function(src, options) {
-        osmFeed.get(src, osmFeed.users)
+        osmFeed.get(program, osmFeed.users)
     })
 
 program
     .command('changesets')
     .description('List all changesets')
     .action(function(src, options) {
-        osmFeed.get(src, osmFeed.changesets)
+       osmFeed.get(program, osmFeed.changesets)
     })
 
 program
-  .option('-l, --limit <n>', 'A limit for the number of desired results', parseInt, undefined)
-  .option('-f, --format <string>', 'The desired format of the output', String, 'txt')
-  .option('-o, --outFile <path/to/file.ext>', 'A file to write the output, defaults to stdout', String)
+    .option('-l, --limit <n>', 'A limit for the number of desired results', parseInt, undefined)
+    .option('-f, --format <string>', 'The desired format of the output', String, 'txt')
+    .option('-o, --outFile <path/to/file.ext>', 'A file to write the output, defaults to stdout', String)
+
 
 program.parse(process.argv)
