@@ -3,6 +3,8 @@ IRJS-OSM
 
 IRJS OSM Tool
 
+![Travis CI](https://travis-ci.org/jenningsanderson/irjs-osm.svg)
+
 
 ## CLI
 ### Installation
