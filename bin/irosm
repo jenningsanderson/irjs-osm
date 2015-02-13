@@ -31,6 +31,13 @@ program
        osmFeed.get(program, osmFeed.changesets)
     })
 
+ program
+    .command('raw')
+    .description('Return Raw API Results')
+    .action(function(src, options) {
+       osmFeed.get(program, osmFeed.raw)
+    })
+
 program
     .option('-l, --limit <n>', 'A limit for the number of desired results', parseInt, undefined)
     .option('-f, --format <string>', 'The desired format of the output', String, 'txt')
