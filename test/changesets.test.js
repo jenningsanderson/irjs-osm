@@ -4,9 +4,9 @@ var assert = require("assert")
 var osmFeed = require('../lib')
 
 describe('Changesets', function() {
-
+    this.timeout(15000);
+    
     it('should grab 3 changesets', function(done) {
-        
         osmFeed.get({limit:3,outFile:'return'}, osmFeed.changesets, function(res){
             assert.equal(res.split('\n').length, 3)
             done()
@@ -15,7 +15,6 @@ describe('Changesets', function() {
     })
 
     it('should make a csv with headers', function(done) {
-        
         osmFeed.get({limit:1, format:'csv',outFile:'return'}, osmFeed.changesets, function(res){
             res.split('\n')[0].should.be.eql('ID,Title,User,Link')
             done()
