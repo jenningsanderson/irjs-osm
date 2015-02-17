@@ -2,8 +2,7 @@ var osmFeed = require('./lib')
 
 options = {}
 options.limit = 3
-options.format = 'json'
-options.outFile = 'return'
+options.outFile = 'db'
 
 //You may pass a bbox in as a string, or as a location by using either of the following (not both).
 
@@ -17,4 +16,3 @@ options.bbox = '-112.076415,46.572087,-111.982267,46.629261'
 osmFeed.get(options, osmFeed.changesets, function(res){
 	console.log(res)
 })
-

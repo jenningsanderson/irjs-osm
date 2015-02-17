@@ -25,6 +25,7 @@
   "homepage": "http://jenningsanderson.github.io/irjs-osm",
   "dependencies": {
     "commander": "^2.6.0",
+    "mongodb": "^1.4.31",
     "parserss": "^0.2.0"
   },
   "devDependencies": {
