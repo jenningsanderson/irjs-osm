@@ -14,7 +14,7 @@ options.bboxFile = './config.bbox'
 options.bbox = '-112.076415,46.572087,-111.982267,46.629261'
 
 //Print out the changesets
-osmFeed.get(options, osmFeed.changesets, function(res){
+osmFeed.get(options, osmFeed.geo, function(res){
 	console.log(res)
 })
 
