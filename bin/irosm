@@ -38,6 +38,13 @@ program
        osmFeed.get(program, osmFeed.raw)
     })
 
+// program
+//     .command 'elasticsearch'
+//     .description('Search the Entries in elastic search')
+//     .action(function(src, options){
+//       osmFeed.search.query
+//     })
+
 program
     .option('-l, --limit <n>', 'A limit for the number of desired results', parseInt, undefined)
     .option('-f, --format <string>', 'The desired format of the output', String, 'txt')

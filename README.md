@@ -30,6 +30,12 @@ Bounding Box: A bounding box of the standard form: LL, UR as a string of 4 numbe
 		-o, --outFile <path/to/file.ext>  A file to write the output, defaults to stdout
 		-b, --bbox <path/to/bbox.config>  The bounding box configuration file, defaults to ./bbox.config
 
+### Persistence
+There are two options for persistence: Mongo and Elastic Search.  The flags are set as the desired format:
+
+	irosm changesets -l 10 -f search
+
+	irosm changesets -l 10 -f mongo
 
 
 ### Example
