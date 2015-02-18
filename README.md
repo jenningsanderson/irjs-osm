@@ -7,7 +7,7 @@ This is a command line tool for working with the lateset OpenStreetMap data for 
 
 
 Bounding Box: A bounding box of the standard form: LL, UR as a string of 4 numbers, comma separated:
-	
+
 	-105.3424072,39.946595,-105.1872253,40.0938316
 
 ## CLI
@@ -30,22 +30,28 @@ Bounding Box: A bounding box of the standard form: LL, UR as a string of 4 numbe
 		-o, --outFile <path/to/file.ext>  A file to write the output, defaults to stdout
 		-b, --bbox <path/to/bbox.config>  The bounding box configuration file, defaults to ./bbox.config
 
+### Persistence
+There are two options for persistence: Mongo and Elastic Search.  The flags are set as the desired format:
+
+	irosm changesets -l 10 -f search
+
+	irosm changesets -l 10 -f mongo
 
 
 ### Example
 
 	$ irosm changesets -l 3 -f csv
-		
+
 	#	ID,Title,User,Link
 	#	28724851,removed a blockbuster,TheDutchMan13,http://openstreetmap.org/browse/changeset/28724851
 	#	28707104,us36 n of boulder,Mark Newnham,http://openstreetmap.org/browse/changeset/28707104
 	#	28704512,boulder canyon boulevard,Mark Newnham,http://openstreetmap.org/browse/changeset/28704512
 
 	$ irosm changesets -l 3 -f csv -o output.csv
-	
+
 	# 	Successfully saved output.csv!
 
-	
+
 ## API
 
 ```javascript
@@ -77,3 +83,7 @@ osmFeed.get(options, osmFeed.changesets, function(res){
 ## Test
 
 	$ mocha
+
+
+## Other
+[Elastic Search vs. MongoDB Review for irjs-osm](https://docs.google.com/presentation/d/1RSO3FcDtvshc5R0cgh0M_w-2FAvZBG50k45aDSq7i00/edit?usp=sharing)
