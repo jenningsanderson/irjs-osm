@@ -30,7 +30,7 @@
         console.log(data)
     		var geojson = L.geoJson(data,{
           onEachFeature : function(feature, layer){
-            layer.bindPopup(feature.properties.User)
+            layer.bindPopup(feature.properties.User + ": " + feature.properties.Comment)
           }
         }).addTo(map);
 
