@@ -3,7 +3,7 @@ var osmFeed = require('./lib')
 options = {}
 options.limit = 3
 options.format = 'geojson'
-options.outFile = './example.geojson'
+options.outFile = 'example.geojson'
 
 //You may pass a bbox in as a string, or as a location by using either of the following (not both).
 
